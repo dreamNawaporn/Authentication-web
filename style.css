@@ -1,0 +1,41 @@
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@300&family=Kanit:wght@700&family=Noto+Sans+Thai:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Anuphan', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+/* ตั้งค่ารูปแบบของเมนูแถบนำทาง */
+header {
+    background-color: #333; /* สีพื้นหลังของเมนู */
+    color: #fff; /* สีข้อความ */
+    padding: 10px; /* ระยะห่างขอบของเมนู */
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff; /* สีข้อความลิงก์ */
+    font-weight: bold;
+  }
+  
+  /* ตั้งค่าสไตล์ของลิงก์ */
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  

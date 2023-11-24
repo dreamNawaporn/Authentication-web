@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Signup</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300&family=Kanit:wght@700&family=Noto+Sans+Thai:wght@300;400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Signup Form
+        </div>
+        <form action="/signup" method="post">
+            <div class="field">
+                <input type="text" id="username" name="username" placeholder="ชื่อผู้ใช้" required>
+            </div>
+            <div class="field">
+                <input type="password" id="password" name="password" placeholder="รหัสผ่าน" required>
+            </div>
+            <div class="field">
+                <label for="authorities"></label>
+                <select name="authorities" id="authorities" required class="select-box">
+                    <option value="admin">ผู้ดูแลระบบ</option>
+                    <option value="user">ผู้ใช้งานทั่วไป</option>
+                </select>
+            </div>
+            <div class="field">
+                <input type="submit" value="ลงทะเบียน">
+            </div>
+            <div class="signup-link">
+                Already a member? <a href="/login">Login now</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

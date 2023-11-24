@@ -1,0 +1,43 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@300&family=Kanit:wght@700&family=Noto+Sans+Thai:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Anuphan', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    font-size: 20px;
+    color: #555;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #7700ff;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #9f1fa8;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        /* สไตล์ CSS สำหรับหน้าเว็บ */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            margin: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #9f1fa8;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome, Admin! <a href="/logout">Logout</a></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>password</th>
+                <th>Authorities</th>
+            </tr>
+        </thead>
+        <tbody id="data-container"></tbody>
+    </table>
+</body>
+
+<script>
+    // สร้างฟังก์ชันเพื่อดึงข้อมูลและแสดงในหน้าเว็บไซต์
+    function displayData() {
+        fetch('/admin/data', {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(data => {
+                const dataContainer = document.getElementById('data-container');
+                // เคลียร์ข้อมูลที่มีอยู่ในคอนเทนเนอร์
+                dataContainer.innerHTML = '';
+                // แสดงข้อมูลในตาราง
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    const usernameCell = document.createElement('td');
+                    const passwordCell = document.createElement('td');
+                    const authoritiesCell = document.createElement('td');
+
+                    usernameCell.textContent = item.username;
+                    passwordCell.textContent = item.password;
+                    authoritiesCell.textContent = item.authorities;
+
+                    row.appendChild(usernameCell);
+                    row.appendChild(passwordCell);
+                    row.appendChild(authoritiesCell);
+                    dataContainer.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    // เรียกใช้งานฟังก์ชันเมื่อหน้าเว็บโหลด
+    window.onload = displayData;
+</script>
+
+</html>
